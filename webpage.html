@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minecraft</title>
+<link rel="icon" href="mc.png">
+<style type="text/css">
+	body{
+		text-align: center;
+		background-image: url("grass.jpg");
+	}
+	.inner{
+		width: 100px;
+		height: 300px;
+		float: left;
+	}
+	img{
+		width: 300px;
+		height: 250px;
+	}
+	div.transparentbox{
+		width: 200px;
+		height: 200px;
+		background-color: white;
+		padding: 10px;
+	}
+	.header{
+		background-color: blueviolet;
+		color: white;
+		padding: 15px;
+	}
+	.col-3 {width: 25%;}
+ 
+	.menu ul{
+		padding: 0px;
+		margin: 15px;
+	}
+	.menu{
+		padding: 0px;
+		float: left;
+	}
+	.menu li{
+		color: white;
+		background-color: gray;
+		padding: 9px;
+		margin-top: 7px;
+		font-size: 20px;
+	}
+	.menu li:hover{
+		background-color: darkorchid;
+	}
+	.s1{ 
+		border-radius: 50px;
+		float: left;
+		text-align: center;
+	}
+	ul{
+		list-style-type: none;
+		background-color: #63B76C;
+		overflow: hidden;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		/*position: fixed;*/
+		top: 0;
+	}
+	li{
+		float: left;
+	}
+	li a{
+		display: inline-block;
+		color: white;
+		font-size: 30px;
+		text-align: center;
+		text-decoration: none;
+		padding: 16px 16px;
+	}
+	li a:hover{
+		background-color: #299617;
+	}
+	.background-color{
+		background-color: white;
+		opacity: 0.8;
+		padding: 0;
+	}
+	.img{
+		width: 90px;
+		height: 90px;
+		float: right;
+	}
+	.img2{
+		width: 500px; 
+		height: 400px;
+		padding: 50px;
+	}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+ 
+html, body {
+    height: 100%;
+}
+ 
+@font-face {
+    font-family: charlieUltra;
+    src: url(fonts/charlie-display-ultra.ttf);
+}
+ 
+@font-face {
+    font-family: GreatSejagad;
+    src: url(fonts/Great_Sejagad.ttf);
+}
+ 
+.container {
+    width: 1355px;
+    height: 100%;
+    margin: 0 auto;
+}
+ 
+.center {
+    width: 50%;
+    height: 50%;
+}
+ 
+.title {
+    color: #45f882;
+    font-size: 70px;
+    font-family: GreatSejagad;
+}
+ 
+.main_title {
+    color: #fff;
+    font-size: 70px;
+    font-family: charlieUltra;
+    line-height: 80px;
+}
+ 
+section.slider {
+    padding: 10px 0;
+    background: #0e0e16;
+    height: 100vh;
+}
+ 
+section.slider .title {
+    font-size: 42px;
+    position: relative;
+    top: 24px;
+}
+ 
+.slider-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 50px;
+}
+.slide_content {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    padding: 0 30px 0 30px;
+    text-align: center;
+}
+.slide_content p {
+    color: cyan;
+    font-family: charlieUltra;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+.slider .btns {
+    text-align: center;
+    margin-top: 50px;
+}
+ 
+.slider .btns button {
+    height: 48px;
+    width: 150px;
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    background: none;
+    font-family: charlieUltra;
+    border: 3px solid #45f882;
+    color: #45f882;
+    letter-spacing: 1px;
+}
+ 
+.slider .btns button:hover {
+    background: #45f882;
+    border: 3px solid #45f882;
+    color: #0e0e16;
+}
+ 
+.slide:hover {
+    border: 3px solid green;
+}
+ 
+.slider {
+  --slider-padding: 1rem;
+  --slider-column-gap: 1rem;
+  --slide-width: 20%;
+  --slide-min-width: 15rem;
+  position: relative;
+  overflow: hidden;
+}
+ 
+.slider__track {
+  display: flex;
+  overflow-x: auto;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  padding-inline: var(--slider-padding);
+  scroll-behavior: smooth;
+  list-style-type: none;
+  padding: 0;
+  margin-right: calc(--var(slider-column-gap) * -1);
+  scrollbar-width: none;
+}
+ 
+.slider__track > * {
+  flex: 0 0 var(--slide-width);
+  min-width: var(--slide-min-width);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding-right: var(--slider-column-gap);
+}
+ 
+.slider__track::-webkit-scrollbar {
+  display: none;
+}
+ 
+.slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    border: 3px solid #383c4e;
+    border-radius: 10px;
+    padding: 3px;
+}
+ 
+.slideimg {
+     width: 100%;
+     border-radius: 10px;
+}
+ 
+/* Responsive Media Query */
+@media (max-width: 1400px){
+    .container {
+        width: 90%;
+    }
+}
+ 
+@media (min-width: 1200px){
+    .menu ul {
+        display: flex;
+        justify-content: center;
+    }
+    .mob-icons {
+        display: none;
+    }
+}
+ 
+@media (max-width: 769px) {
+    .main_title {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .title {
+        font-size: 60px;
+    }
+}
+ 
+@media (max-width: 600px) {
+    .title {
+        font-size: 40px;
+    }
+    .main_title {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    section.slider .title {
+        font-size: 40px;
+    }
+    button.{
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .slider .btns button {
+        font-size: 16px;
+    }
+}
+ 
+@media (max-width: 426px) {
+    .main_title {
+        font-size: 35px;
+        line-height: 35px;
+    }
+    section.slider .title {
+        font-size: 30px;
+        top: 10px;
+    }
+}
+	img:hover:{
+			color: black;
+		}
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      font-family: Segoe UI;
+      font-weight: 400;
+      background-color:  #ededed;
+    }
+    .footer{
+      padding: 40px 0;
+      background-color: #795C34;
+    }
+    .footer .social{
+      text-align: center;
+      padding-bottom: 25px;
+      color: #8A9A4B;
+    }
+    .footer .social a{
+      font-size: 24px;
+      color: #C7EA46;
+      border: 1px solid #ccc;
+      width: 40px;
+      height: 40px;
+      line-height: 38px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 50%;
+      margin: 0 8px;
+      opacity: 0.75;
+    }
+    .footer .social a:hover{
+      color: #043927;
+    }
+    .footer .copyright{
+      margin-top: 15px;
+      text-align: center;
+      font-size: 13px;
+      color: #aaa;
+    }
+    .footerBottom{
+      background-color: #5DBB63;
+      padding: 20px;
+      text-align: center;
+    }
+    .footerBottom p{
+      color: #234F1E;
+    }
+    .designer{
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 400;
+      margin: 0px 5px;
+    }
+</style>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-color">
+		<ul>
+			<img src="logo.png" class="img">
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="Aboutus.html">About Us</a></li>
+			<li><a href="discover.html">Discover</a></li>
+		</ul>
+        <td style="padding-left: 100px;" align="center"><a href=""></a></td>
+		<td style="padding-left: 200px; width: 100px; font-size: 30px;">
+            <img src="minecraft.jpg" class="img2">
+		</td>
+    </div>
+        <!-- Slider section -->
+        <section class="slider">
+            <div class="container">
+                <div class="slider" data-slider="">
+                    <div class="slider-title">
+                        <div>
+                            <p class="title">Here's some tips!</p>
+                            <p class="main_title">TUTORIALS</p>
+                        </div>
+                    </div>
+                    <ul class="slider__track" data-slider-track="">
+                        <li>
+                            <div class="slide">
+                                <a href="https://www.minecraft.net/en-us/article/how-create-traps-#:~:text=Just%20build%20a%20hole%20in,will%20fall%20to%20their%20doom!"><img src="trap.jpg" class="slideimg"></a>
+                                <div class="slide_content">
+                                    <p>How to create traps?</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slide">
+                                <a href="https://www.rockpapershotgun.com/minecraft-how-to-make-a-nether-portal#:~:text=A%20Minecraft%20Nether%20Portal%20is,your%20Portal%20within%20these%20bounds"><img src="portal.jpg" class="slideimg"></a>
+                                <div class="slide_content">
+                                    <p>How to make a nether portal?</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slide">
+                                <a href="https://www.create-learn.us/blog/building-minecraft-houses/"><img src="house.jpg" class="slideimg"></a>
+                                <div class="slide_content">
+                                    <p>How to bulid a house?</p>
+                                </div>
+                            </div>
+                        </li>
+                         <li>
+                            <div class="slide">
+                                <a href="https://www.google.com/search?q=minecraft+glitches&source=lmns&bih=643&biw=1366&client=firefox-b-d&hl=en&sa=X&ved=2ahUKEwjj9fzNsayEAxU-SmwGHeAoCJMQ0pQJKAB6BAgBEAI#"><img src="glitch.jpg" class="slideimg"></a>
+                                <div class="slide_content">
+                                    <p>How to use glitch hacks?</p>
+                                </div>
+                            </div>
+                        </li>
+                         <li>
+                            <div class="slide">
+                                <a href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2F23amb7c4tLs%2Fmaxresdefault.jpg&tbnid=7nr70NzO55wv-M&vet=12ahUKEwjB4uDssayEAxVyZmwGHXxKBTwQMygBegQIARBS..i&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D23amb7c4tLs&docid=7KCOorQ8I2P0XM&w=1280&h=720&q=how%20to%20survive%20night%20in%20minecraft&hl=en&client=firefox-b-d&ved=2ahUKEwjB4uDssayEAxVyZmwGHXxKBTwQMygBegQIARBS"><img src="night.jpg" class="slideimg"></a>
+                                <div class="slide_content">
+                                    <p>How to survive the night?</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btns">
+                        <button>SHOW ALL</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Slider section End -->
+        <script src="script.js"></script>
+    </div>
+    <section class="footer">
+        <div class="social">
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjIvfrhopiEAxXVoWMGHQKzA_8QFnoECAcQAQ&url=https%3A%2F%2Ftwitter.com%2F%3Flang%3Den&usg=AOvVaw1Sd3B-_cNZOLSmhw9z2lOm&opi=89978449"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwj_i_mCo5iEAxXGqWYCHTS1BjQYABAAGgJzbQ&gclid=EAIaIQobChMI_4v5gqOYhAMVxqlmAh00tQY0EAAYASAAEgKpy_D_BwE&ohost=www.google.com&cid=CAASJeRoTrKH65X5hNpZe3CjRkuc30I0bEGoPWfjeCdb7dJMhnEiQJ0&sig=AOD64_1JzR-vx-2_ioqr5Y3sOQMT7CBa1g&q&adurl&ved=2ahUKEwjE5POCo5iEAxWkyDgGHQXDBtMQ0Qx6BAgFEAE"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div class="footerBottom">
+            <p>Copyright ©:2024 Designed by <span class="designer">MINECRAFTER STUDIO</span></p>
+        </div>
+    </section>
+</body>
+</html>
